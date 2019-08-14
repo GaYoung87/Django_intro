@@ -19,11 +19,14 @@ from pages import views
 
 # www.ssafy.com/admin/ (이 우리 홈페이지면 path 가 있기 때문에) -> 홈페이지로 들어올 수 있음
 # www.ssafy.com/login/  -> path에 없음 -> 보여줄 수 있는 페이지 없음(404m). if 있다면, '로그인 페이지 관련 함수'로 이동해!
-urlpatterns = [
+urlpatterns = [   # path('사용자가 접속하는 경로')
     # path('login/', 로그인 페이지 관련 함수),
-    # path('사용자가 접속하는 경로')
-    path('dinner/', views.dinner),
+    path('times/<int:num1>/<int:num2>/', views.times),
+    path('greeting/<str:name>/', views.greeting),
+    path('image/', views.image),
+    path('dinner/<str:name>/', views.dinner),
     path('introduce/', views.introduce),
     path('index/', views.index),  # 가장 위에 적은 것으로 감  ex. 밑에 index가 있어도 지금 index로 가게함.
     path('admin/', admin.site.urls),
 ]
+
