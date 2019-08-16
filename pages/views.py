@@ -1,5 +1,6 @@
 # ages / view
 from django.shortcuts import render
+from datetime import datetime
 import random
 
 
@@ -26,6 +27,8 @@ def dinner(request, name):
 
     # Django template로 context 전달
     return render(request, 'dinner.html', context)
+    
+    import random
 
 
 def image(request):
@@ -51,3 +54,34 @@ def times(request, num1, num2):
         'result': num1 * num2
     }
     return render(request, 'times.html', context)
+
+
+def template_language(request):
+    menus = ['짜장면', '탕수육', '짬뽕', '양장피']
+    my_sentence = 'Life is short, you need python'
+    messages = ['apple', 'banana', 'cucumber', 'mango']
+    empty_list = []
+    datetimenow = datetime.now()
+    context = {
+        'menus': menus,
+        'my_sentence': my_sentence,
+        'messages': messages,
+        'empty_list': empty_list,
+        'datetimenow': datetimenow,
+    }
+    return render(request, 'template_language.html', context)
+
+
+def isitbirthday(request):
+    return render(request, 'isitbirthday.html')
+
+
+def lotto(request):
+    real_lottos = [21, 25, 30, 32, 40, 42]
+    lottos = sorted(list(random.sample(range(1, 46), 6)))
+
+    context = {
+        'real_lottos': real_lottos,
+        'lottos': lottos,
+    }
+    return render(request, 'lotto.html', context)
