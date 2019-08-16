@@ -85,3 +85,39 @@ def lotto(request):
         'lottos': lottos,
     }
     return render(request, 'lotto.html', context)
+
+
+def search(request):
+    return render(request, 'search.html')
+
+
+def result(request):
+    query = request.GET.get('query')
+    category = request.GET.get('category')
+    context = {
+        'query': query,
+        'category': category,
+    }
+    return render(request, 'result.html', context)
+
+
+def lotto_pick(request):
+    return render(request, 'lotto_pick.html')
+
+
+def lotto_result(request):
+    lotto_numbers = request.GET.get('lotto_numbers')
+    real_lottos = [21, 25, 30, 32, 40, 42]
+    lotto_numbers = [int(number) for number in lotto_numbers.split()]
+    
+    if real_lottos == lotto_numbers:
+        result = '퇴사합니다! 고생하셨습니다!'
+    else:
+        result = '야근합시다...ㅠㅠ'
+
+    context = {
+        'result': result,
+    }
+    return render(request, 'lotto_result.html', context)
+
+    #get 사용시 페이지 2개 필요하고, 그 부분만 기억하고 있으면 ok!!!!!

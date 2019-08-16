@@ -21,6 +21,12 @@ from pages import views
 # www.ssafy.com/login/  -> path에 없음 -> 보여줄 수 있는 페이지 없음(404m). if 있다면, '로그인 페이지 관련 함수'로 이동해!
 urlpatterns = [   # path('사용자가 접속하는 경로')
     # path('login/', 로그인 페이지 관련 함수),
+    path('lotto_result/', views.lotto_result),
+    path('lotto_pick/', views.lotto_pick),
+
+    path('result/', views.result),
+    path('search/', views.search),
+    
     path('lotto/', views.lotto),
     path('isitbirthday/', views.isitbirthday),
     path('template_language/', views.template_language),
