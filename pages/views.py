@@ -121,3 +121,11 @@ def lotto_result(request):
     return render(request, 'lotto_result.html', context)
 
     #get 사용시 페이지 2개 필요하고, 그 부분만 기억하고 있으면 ok!!!!!
+
+
+def static_example(request):
+    return render(request, 'static_example.html')
+
+
+def static_css_example(request):
+    return render(request, 'static_css_example.html')
