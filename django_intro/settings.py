@@ -33,8 +33,8 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     # Local apps
     'pages',  # 이렇게 해주지 않으면 django는 pages라는 앱이 있는지 모른다.
-    'utilities',
-
+    'utilities',  # template는 하나의 통에 집어넣어지고, 이 순서대로 template를 읽는다.(pages의 index -> utilities의 index)
+                  # pages/index, utilities/index라고 설정해야함. -> template폴더 안에 pages, utilities파일 만든 후, 그 안에 파일넣기!
     # Third party apps (다른 사람이 만든 app을 가지고와서 사용할 때) why? 순서가 존재? -> django는 순서대로 읽는다.
 
     # Django apps (등록하는 것에도 순서가 있다! -> Django apps는 언제나 마지막에 작성)
