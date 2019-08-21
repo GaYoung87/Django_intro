@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     # Local apps
     'pages',  # 이렇게 해주지 않으면 django는 pages라는 앱이 있는지 모른다.
+    'utilities',
 
     # Third party apps (다른 사람이 만든 app을 가지고와서 사용할 때) why? 순서가 존재? -> django는 순서대로 읽는다.
 

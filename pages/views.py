@@ -129,3 +129,15 @@ def static_example(request):
 
 def static_css_example(request):
     return render(request, 'static_css_example.html')
+
+
+def push(request):
+    return render(request, 'push.html')
+
+
+def pull(request):
+    num = request.GET.get('num')
+    context = {
+        'num': num,
+    }
+    return render(request, 'pull.html', context)
